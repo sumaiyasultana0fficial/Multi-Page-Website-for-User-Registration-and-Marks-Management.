@@ -1,0 +1,115 @@
+  <!--Author:Sumaiya Sultana
+   ID:20222029010
+   Semester:3.1
+   Description:This is a html file to create registation form for students.-->
+  
+  <?php
+    include("connect.php");
+    ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="style.css">
+	<title>Registration Form</title>
+	<script>
+		
+			
+			 function clearfunction() {
+            
+            document.getElementById("fullname").value = "";
+            document.getElementById("id").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("password").value = "";
+            document.getElementById("department").value = "";
+			document.getElementById("dob").value = "";
+			document.getElementById("Muslim").checked = false;
+			document.getElementById("hindu").checked = false;
+			document.getElementById("Other").checked = false;
+			document.getElementById("male").checked = false;
+			document.getElementById("female").checked = false;
+			document.getElementById("fall").checked = false;
+			document.getElementById("spring").checked = false;
+			document.getElementById("phn").value = "";
+			document.getElementById("emphn").value = "";	
+            
+        }
+			
+		</script>
+</head>
+<body>
+   
+    
+	<div class="container">
+		<form action="view.php" method="post" >
+		  <h2>Registration Form</h2>
+				<label for="fullname">Full Name:</label>
+				<input type="text" name="fullname" id="fullname" required>
+			<br>
+		
+				<label for="id">ID:</label>
+				<input type="number" name="id" id="id"  required>
+			<br>
+		
+				<label for="email">Email:</label>
+				<input type="email" name="email" id="email" required>
+			<br>
+			
+				<label for="password">Password:</label>
+				<input type="password" name="password" id="password"  required>
+			<br>
+			
+				<label for="department">Department:</label>
+				<select name="dept" id="department" required>
+					<option value="CSE">CSE</option>
+					<option value="EEE">EEE</option>
+					<option value="CE">CE</option>
+					<option value="BA">BA</option>
+					<option value="ELL">ELL</option>
+					<option value="DS">DS</option>
+					<option value="Economics">Economics</option>
+					<option value="Sociology">Sociology</option>
+					<option value="PH">PH</option>
+					<option value="LLB">LLB</option>
+				</select>
+			<br>
+		
+				<label for="dob">Date of Birth:</label>
+				<input type="date" name="dob" id="dob" required>
+			
+			
+				<label>Religion:</label>
+				<input type="checkbox" name="religion[]" id="Muslim" value="Muslim">Muslim
+				<input type="checkbox" name="religion[]" id="hindu" value="hindu">Hindu
+				<input type="checkbox" name="religion[]" id="Other" value="Other">Other
+			<br>
+		
+				<label>Gender:</label>
+				<input type="radio" name="gender" id="male" value="Male" required>Male
+				<input type="radio" name="gender" id="female" value="Female" required>Female
+			<br>
+		
+				<label>Start Term:</label>
+				<input type="radio" name="term" id="fall" value="Fall" required>Fall
+				<input type="radio" name="term" id="spring" value="Spring" required>Spring
+			<br>
+			
+				<label for="phn">Phone Number:</label>
+				<input type="number" name="phn" id="phn" required>
+			<br>
+			
+				<label for="emphn">Emergency Phone Number:</label>
+				<input type="number" name="emphn" id="emphn" required>
+			<br>
+			<div style="margin-top:10px">
+				
+				<input type="submit" style="background-color: rgb(93, 177, 205);padding: 10px 20px;" name="Submit" value="Submit">
+				<button type="button" style="background-color: rgb(93, 177, 205);padding: 10px 20px;" onclick="clearfunction()">Clear</button>
+			</div>
+			
+		</form>
+		
+	</div>
+</body>
+</html>

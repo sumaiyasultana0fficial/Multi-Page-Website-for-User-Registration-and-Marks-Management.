@@ -1,0 +1,115 @@
+<!--Author:Sumaiya Sultana
+   ID:20222029010
+   Semester:3.1
+   Description:This is a html file to create a form using which user can input marks for 5 subject.-->
+<?php
+    include("result_connect.php"); 
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGPA Calculator</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: rgb(166, 215, 231);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+          
+        }
+
+        label {
+            display: block;
+			margin-top:10px;
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .button-field {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: rgb(93, 177, 205);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: rgba(76, 68, 182, 0.8);
+        }
+    </style>
+    <script>
+        function clearfunction() {
+            document.getElementById("one").value = "";
+            document.getElementById("two").value = "";
+            document.getElementById("three").value = "";
+            document.getElementById("four").value = "";
+            document.getElementById("five").value = "";
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+       <h2>CGPA Calculator</h2>
+		<form action="result_connect.php" method="POST">
+				<label for="one">Mark of 1st subject:</label>
+				<input type="number" min="0" max="100" id="one" name="one" placeholder="Enter GPA" required>
+
+				<label for="two">Mark of 2nd subject:</label>
+				<input type="number" min="0" max="100" id="two" name="two" placeholder="Enter GPA" required>
+
+				<label for="three">Mark of 3rd subject:</label>
+				<input type="number" min="0" max="100"  id="three" name="three" placeholder="Enter GPA" required>
+
+				<label for="four">Mark of 4th subject:</label>
+				<input type="number" min="0" max="100" id="four" name="four" placeholder="Enter GPA" required>
+
+				<label for="five">Mark of 5th subject:</label>
+				<input type="number" min="0" max="100"  id="five" name="five" placeholder="Enter GPA" required>
+
+				<div class="button-field">
+					<input type="submit" class="button" name="Submit" value="Submit">
+					<button type="button" class="button" onclick="clearfunction()">Clear</button>
+				</div>
+
+        </form>
+    </div>
+</body>
+</html>
